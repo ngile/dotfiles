@@ -18,6 +18,7 @@ local o = {
   mat = 3,
   cursorcolumn = true,
   cursorline = true,
+  background = "dark",
   autoindent = true
 }
 

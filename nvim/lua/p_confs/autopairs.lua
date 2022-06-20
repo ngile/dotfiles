@@ -9,22 +9,24 @@ npairs.setup {
   ts_config = {
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
-    java = false,
+    java = true,
+    groovy = true,
   },
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
   fast_wrap = {
     map = "<A-e>",
     chars = { "{", "[", "(", '"', "'" },
     pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-    offset = 0, -- Offset from pattern match
+    offset = -1, -- Offset from pattern match
     end_key = "$",
-    keys = "1234567890",
+    -- keys = "1234567890",
+    keys = 'qwertyuiopzxcvbnmasdfghjkl',
     check_comma = true,
     highlight = "PmenuSel",
     highlight_grey = "LineNr",
   },
 }
-
+local enable_check_bracket_line = false
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then

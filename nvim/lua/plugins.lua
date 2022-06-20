@@ -87,4 +87,6 @@ use {
   -- Comments
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  use 'milch/vim-fastlane'
 end)

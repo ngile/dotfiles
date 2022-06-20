@@ -214,6 +214,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/georgi/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-fastlane"] = {
+    loaded = true,
+    path = "/home/georgi/.local/share/nvim/site/pack/packer/start/vim-fastlane",
+    url = "https://github.com/milch/vim-fastlane"
   }
 }
 
