@@ -122,15 +122,12 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-      window = {
-       completion = cmp.config.window.bordered(),
-       documentation = cmp.config.window.bordered(),
-    },
---  documentation = {
---    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
---  },
   experimental = {
     ghost_text = false,
     native_menu = false,
+  },
+  window = {
+    documentation = cmp.config.window.bordered(), 
+    completion = cmp.config.window.bordered(),
   },
 }

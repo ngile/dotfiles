@@ -5,6 +5,7 @@ if not status_ok then
 end
 
 npairs.setup {
+  map_c_w = true,
   check_ts = true,
   ts_config = {
     lua = { "string", "source" },

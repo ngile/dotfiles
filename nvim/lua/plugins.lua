@@ -41,9 +41,11 @@ packer.init {
 
 
 require('packer').startup(function()
+  use 'B4mbus/oxocarbon-lua.nvim'
   use 'wbthomason/packer.nvim'
   use 'morhetz/gruvbox'
-  use 'rmehri01/onenord.nvim'
+  use 'jsit/toast.vim'
+  use 'rakr/vim-one'
   use "moll/vim-bbye"
   -- use "folke/which-key.nvim"
   use 'savq/melange'
@@ -51,9 +53,17 @@ require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+}
   use 'windwp/nvim-autopairs'
   use {
     'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
     config = function() require'nvim-tree'.setup {} end
 }
 use {
@@ -89,4 +99,6 @@ use {
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   use 'milch/vim-fastlane'
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
 end)
