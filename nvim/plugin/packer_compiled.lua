@@ -239,6 +239,7 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/georgi/.local/share/nvim/site/pack/packer/start/vim-fastlane",
     url = "https://github.com/milch/vim-fastlane"
+  },
   ["vim-one"] = {
     loaded = true,
     path = "/home/georgi/.local/share/nvim/site/pack/packer/start/vim-one",
