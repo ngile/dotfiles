@@ -25,6 +25,7 @@ keymap("n", "<leader>bw", ":bw<CR>", opts)
 
 keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>fg","<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>ee", "<cmd>lua require'nvim-tree'.toggle(false)<cr>", opts)
+--[[ keymap("n", "<leader>ee", "<cmd>lua require'nvim-tree'.toggle(false)<cr>", opts) ]]
+keymap("n", "<leader>ee", "<cmd>lua require'nvim-tree.api'.tree.toggle()<cr>", opts)
 keymap("n", "<leader>fe", "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
