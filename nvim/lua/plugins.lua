@@ -94,6 +94,18 @@ use {
     run = ":TSUpdate",
   }
 
+  -- Animation
+
+  use { 
+    'echasnovski/mini.cursorword',
+    branch = 'stable'
+  }
+
+  use { 
+    'echasnovski/mini.animate',
+    branch = 'stable'
+  }
+
   -- Comments
   use "numToStr/Comment.nvim"
   use 'JoosepAlviste/nvim-ts-context-commentstring'

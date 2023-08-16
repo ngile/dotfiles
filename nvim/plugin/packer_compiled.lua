@@ -134,6 +134,16 @@ _G.packer_plugins = {
     path = "/home/georgi/.local/share/nvim/site/pack/packer/start/melange",
     url = "https://github.com/savq/melange"
   },
+  ["mini.animate"] = {
+    loaded = true,
+    path = "/home/georgi/.local/share/nvim/site/pack/packer/start/mini.animate",
+    url = "https://github.com/echasnovski/mini.animate"
+  },
+  ["mini.cursorword"] = {
+    loaded = true,
+    path = "/home/georgi/.local/share/nvim/site/pack/packer/start/mini.cursorword",
+    url = "https://github.com/echasnovski/mini.cursorword"
+  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/home/georgi/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
