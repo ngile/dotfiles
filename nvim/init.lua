@@ -1,15 +1,3 @@
-require('keybindings')
-require('plugins')
-require('options')
-require('p_confs/lualine')
-require('p_confs/telescope')
-require('p_confs/luasnip')
-require('p_confs/treesitter')
-require('p_confs/cmp')
-require('p_confs/autopairs')
-require('p_confs/comments')
-require('p_confs/gitsigns')
-require('p_confs/toggleterm')
-require('p_confs/mini')
--- require('p_confs/wichkey')
-require('lsp')
+require "core.options"
+require "core.keybindings"
+require "core.lazy"
