@@ -2,7 +2,6 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		version = "*",
 		config = function()
 			local mappings = {
 				["q"] = { "<cmd>confirm q<CR>", "Quit" },

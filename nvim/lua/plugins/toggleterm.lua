@@ -3,12 +3,10 @@ return {
 
 		"akinsho/toggleterm.nvim",
 		event = "VeryLazy",
-		version = "*",
 		config = function()
 			local execs = {
 				{ nil, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-				{ nil, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-				{ nil, "<M-3>", "Float Terminal", "float", nil },
+				{ nil, "<M-2>", "Float Terminal", "float", nil },
 			}
 
 			local function get_buf_size()
@@ -120,6 +118,7 @@ return {
 				vim.api.nvim_buf_set_keymap(0, "t", "<m-k>", [[<C-\><C-n><C-W>k]], opts)
 				vim.api.nvim_buf_set_keymap(0, "t", "<m-l>", [[<C-\><C-n><C-W>l]], opts)
 			end
+                        vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 		end,
 	},
 }

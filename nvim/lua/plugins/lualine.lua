@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		version = "*",
 		config = function()
 			local sl_hl = vim.api.nvim_get_hl_by_name("StatusLine", true)
 			vim.api.nvim_set_hl(0, "Copilot", { fg = "#6CC644", bg = sl_hl.background })

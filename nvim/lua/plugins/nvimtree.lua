@@ -2,7 +2,6 @@ local icons = require "core.icons"
 
 return {
   "nvim-tree/nvim-tree.lua",
-  version = "*",
   lazy = false,
   keys = {
     { "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "NvimTree" },

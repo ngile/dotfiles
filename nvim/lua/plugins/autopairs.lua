@@ -4,6 +4,7 @@ return {
   config = function()
     local autopairs = require("nvim-autopairs")
     local Rule = require("nvim-autopairs.rule")
+    local map_c_h = true
     local ts_conds = require("nvim-autopairs.ts-conds")
 
     autopairs.setup({

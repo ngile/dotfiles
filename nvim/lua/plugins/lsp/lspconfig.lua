@@ -8,14 +8,17 @@ return {
 	config = function()
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
+
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap -- for conciseness
 
 		local opts = { noremap = true, silent = true }
+
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
+
 			-- set keybinds
 			opts.desc = "Show LSP references"
 			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
@@ -90,15 +93,39 @@ return {
 			end,
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				pyright = {
+					disableOrganizeImports = true,
+				},
+				python = {
+					analysis = {
+						diagnosticSeverityOverrides = {
+							reportPrivateImportUsage = "none",
+						},
+						autoImportCompletion = true,
+						autoSearchPaths = true,
+						useLibraryCodeForTypes = true,
+						diagnosticMode = "openFilesOnly",
+						typeCheckingMode = "basic",
+						stubPath = vim.fn.expand("~/.config/nvim/stubs"),
+					},
+				},
+			},
 		})
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+        -- custom settings for lua
 			settings = { -- custom settings for lua
 				Lua = {
-					format = {
-						enable = false,
+                                      format = {
+                                        enable = true,
+						defaultConfig = {
+							indent_style = "space",
+							indent_size = "2",
+							continuation_indent_size = "2",
+						},
 					},
 					-- make the language server recognize "vim" global
 					diagnostics = {
