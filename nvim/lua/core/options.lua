@@ -46,4 +46,12 @@ for k, v in pairs(g) do
 	vim.g[k] = v
 end
 
+--vim.autocmd FileType=yaml setlocal indentkeys-=<:>
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "yaml",
+	callback = function()
+		vim.opt_local.indentkeys = "!^F,o,O,0#,0},0],0-"
+	end
+})
 -- vim.cmd [[colorscheme melange]]
