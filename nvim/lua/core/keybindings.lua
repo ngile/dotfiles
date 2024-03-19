@@ -29,3 +29,6 @@ keymap("n", "<leader>bw", ":bw<CR>", opts)
 -- keymap("n", "<leader>ee", "<cmd>lua require'nvim-tree.api'.tree.toggle()<cr>", opts)
 -- keymap("n", "<leader>fe", "<cmd>lua require'telescope'.extensions.file_browser.file_browser()<cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+--
+keymap("v", "<leader>64e", "c<c-r>=system('base64 --wrap=0 ', @\")<cr><esc>", opts)
+keymap("v", "<leader>64d", "c<c-r>=system('base64 --wrap=0 --decode', @\")<cr><esc>", opts)
