@@ -6,7 +6,8 @@ return {
 			local mappings = {
 				["q"] = { "<cmd>confirm q<CR>", "Quit" },
 				["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-				["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+				-- ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+                                ["e"] = { "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>", "File Browser" },
 				b = {
 					name = "Buffers",
 					b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
