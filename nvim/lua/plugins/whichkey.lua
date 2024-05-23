@@ -89,6 +89,7 @@ return {
 				l = {
 					name = "LSP",
 					a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+					c = { "<cmd>Telescope commands<cr>", "List commands" },
 					d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
 					w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 					f = { "<cmd>lua vim.lsp.buf.format({timeout_ms = 1000000})<cr>", "Format" },
