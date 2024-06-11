@@ -41,5 +41,5 @@ return {
     })
 
     autopairs.add_rules({ })
-  end,
+  end
 }
