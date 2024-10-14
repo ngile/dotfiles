@@ -102,7 +102,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: fantasque sans mono
+    family: Cousine Nerd Font
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
@@ -112,7 +112,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: fantasque sans mono
+    family: Cousine Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -123,7 +123,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: fantasque sans mono
+    family: Cousine Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -134,13 +134,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: fantasque sans mono
+    family: Cousine Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 12.0
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
@@ -851,24 +851,24 @@ _level`: null
 
 colors:
   primary:
-    foreground: '#ECE1D7'
-    background: '#2A2520'
+    foreground: "#ECE1D7"
+    background: "#2A2520"
   normal:
-    black:   '#352F2A'
-    red:     '#B65C60'
-    green:   '#78997A'
-    yellow:  '#EBC06D'
-    blue:    '#9AACCE'
-    magenta: '#B380B0'
-    cyan:    '#86A3A3'
-    white:   '#A38D78'
+    black: "#352F2A"
+    red: "#B65C60"
+    green: "#78997A"
+    yellow: "#EBC06D"
+    blue: "#9AACCE"
+    magenta: "#B380B0"
+    cyan: "#86A3A3"
+    white: "#A38D78"
   bright:
-    black:   '#4D453E'
-    red:     '#F17C64'
-    green:   '#99D59D'
-    yellow:  '#EBC06D'
-    blue:    '#9AACCE'
-    magenta: '#CE9BCB'
-    cyan:    '#88B3B2'
-    white:   '#C1A78E'
+    black: "#4D453E"
+    red: "#F17C64"
+    green: "#99D59D"
+    yellow: "#EBC06D"
+    blue: "#9AACCE"
+    magenta: "#CE9BCB"
+    cyan: "#88B3B2"
+    white: "#C1A78E"
 theme: melange dark
