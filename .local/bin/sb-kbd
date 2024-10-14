@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" = "change" ]; then
+  lang_number=$(xkbgroup get num)
+  kbdxkill="pkill -RTMIN+17 i3blocks"
+
+  case $lang_number in
+    0) xkbgroup set num 1; $kbdxkill ;;
+    1) xkbgroup set num 0; $kbdxkill ;;
+  esac
+fi
+
+layout=$(xkbgroup get symbol)
+echo ${layout^^}

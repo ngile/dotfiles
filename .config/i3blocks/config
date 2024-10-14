@@ -1,0 +1,29 @@
+command=/usr/share/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[volume]
+#label=VOL
+label=♪
+instance=Master
+#instance=PCM
+interval=5
+signal=10
+
+[key_layout]
+#label=Layout
+interval=once
+signal=17
+command=sb-kbd
+
+[battery]
+#label=BAT
+label=⚡
+#instance=1
+interval=30
+
+# Date Time
+#
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1

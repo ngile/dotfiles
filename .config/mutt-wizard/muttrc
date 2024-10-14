@@ -1,0 +1,12 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+
+bind index d delete-message
+bind index D delete-pattern
+
+set use_threads=threads sort=last-date sort_aux=date
+set sidebar_visible = no
+
+color index_author blue default '.*'
+color index_author brightwhite black "~N"
+color index_subject brightwhite black "~N"
