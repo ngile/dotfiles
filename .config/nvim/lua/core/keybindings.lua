@@ -18,10 +18,6 @@ keymap('n', 'G', 'Gzz', opts)
 keymap('n', '}', '}zz', opts)
 keymap('n', '{', '{zz', opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bw", ":bw<CR>", opts)
 
 -- keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- keymap("n", "<leader>fg","<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
