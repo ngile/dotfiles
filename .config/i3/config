@@ -36,7 +36,7 @@ new_window pixel 2
 new_float pixel 2
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 #bindsym $mod+Return exec termite
 
 # kill focused window
@@ -213,9 +213,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id nitrogen --restore; sleep 1; compton --config /home/georgi/.compton.conf
+# exec --no-startup-id nitrogen --restore; sleep 1; compton --config /home/georgi/.compton.conf
 exec --no-startup-id nm-applet
-exec setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option -option caps:escape
+exec_always setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option -option caps:escape
 exec --no-startup-id blueman-applet
 #exec --no-startup-id xautolock -time 1 -locker "~/.config/i3/lock.sh"
 

@@ -20,9 +20,14 @@ set dircounts
 map gD cd ~/Documents
 map gd cd ~/Downloads
 map gr cd ~/repos/
-map gw cd ~/work
+map gww cd ~/work
 map gm cd /media
 map gC cd ~/.config
+map gww cd ~/work
+map gwt cd ~/work/terraform
+map gwk cd ~/work/k8s/
+map gwp cd ~/work/python
+map gwa cd ~/work/aws/
 
 map r
 
