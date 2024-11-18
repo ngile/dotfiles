@@ -214,10 +214,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nitrogen --restore
-# exec --no-startup-id compton -b
+exec --no-startup-id compton -b
 # exec --no-startup-id nitrogen --restore; sleep 1; compton --config /home/georgi/.compton.conf
 exec --no-startup-id nm-applet
-exec_always --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option -option caps:escape
+exec_always --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option caps:escape
 exec --no-startup-id blueman-applet
 #exec --no-startup-id xautolock -time 1 -locker "~/.config/i3/lock.sh"
 
@@ -237,7 +237,7 @@ mode "$mode_launcher" {
     bindsym t exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-3 --mode 1920x1080 --pos 0x0 --rotate normal
     bindsym w exec nitrogen --restore
     bindsym i exec wine /home/georgi/Downloads/winbox64.exe
-    bindsym f exec alacritty -e lf
+    bindsym f exec wezterm -e lf
 
     bindsym Esc mode "default"
     bindsym Return mode "default"
