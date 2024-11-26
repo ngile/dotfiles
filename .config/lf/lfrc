@@ -16,6 +16,91 @@ set reverse
 set info size
 set dircounts
 
+
+# Shell scripts
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# cmd tar ${{
+#     set -f
+#     mkdir $1
+#     cp -r $fx $1
+#     tar czf $1.tar.gz $1
+#     rm -rf $1
+# }}
+
+cmd create_txz ${{
+    set -f
+    printf "Archive Name: "
+    read ans
+    mkdir $ans
+    cp -r $fx $ans
+    tar cJf $ans.txz $ans
+    rm -rf $ans
+}}
+
+cmd create_bz2 ${{
+    set -f
+    printf "Archive Name: "
+    read ans
+    mkdir $ans
+    cp -r $fx $ans
+    tar cjf $ans.tbz2 $ans
+    rm -rf $ans
+}}
+
+cmd create_tgz ${{
+    set -f
+    printf "Archive Name: "
+    read ans
+    mkdir $ans
+    cp -r $fx $ans
+    tar czf $ans.tgz $ans
+    rm -rf $ans
+}}
+
+cmd create_zip ${{
+    set -f
+    printf "Archive Name: "
+    read ans
+    mkdir $ans
+    cp -r $fx $ans
+    zip -r $ans.zip $ans
+    rm -rf $ans
+}}
+
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 1 | fzf --reverse --header="Jump to location")"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+cmd mkdir %IFS=" "; mkdir -p -- "$*"
+cmd touch %IFS=" "; touch -- "$*"
+cmd glob-select %IFS=" "; :glob-select -- "$*"
+
 # Shortcuts
 map gD cd ~/Documents
 map gd cd ~/Downloads
@@ -29,33 +114,77 @@ map gwk cd ~/work/k8s/
 map gwp cd ~/work/python
 map gwa cd ~/work/aws/
 
+
+
+# Maps
 map r
-
-
 map ri rename
 map rI :rename; cmd-home
 map rA :rename; cmd-end
 map rc :rename; cmd-delete-home
-
 map o &mimeopen $f
 map O $mimeopen --ask $f
 map p :paste; clear
-
 map zf filter
-
-# Functions
-#
-#
+map sf push :glob-select<space>
 
 
-cmd mkdir %IFS=" "; mkdir -p -- "$*"
-cmd touch %IFS=" "; touch -- "$*"
+
+map +x $lf -remote "send $id $(chmod u+x $fx) reload"
+map +X $lf -remote "send $id $(chmod u+X $fx) reload" 
+map +w $lf -remote "send $id $(chmod u+w $fx) reload" 
+map +r $lf -remote "send $id $(chmod u+r $fx) reload" 
+map +s $lf -remote "send $id $(chmod u+s $fx) reload" 
+map +gx $lf -remote "send $id $(chmod g+x $fx) reload" 
+map +gX $lf -remote "send $id $(chmod g+X $fx) reload" 
+map +gw $lf -remote "send $id $(chmod g+w $fx) reload" 
+map +gr $lf -remote "send $id $(chmod g+r $fx) reload" 
+map +gs $lf -remote "send $id $(chmod g+s $fx) reload" 
+map +ox $lf -remote "send $id $(chmod o+x $fx) reload" 
+map +oX $lf -remote "send $id $(chmod o+X $fx) reload" 
+map +ow $lf -remote "send $id $(chmod o+w $fx) reload" 
+map +or $lf -remote "send $id $(chmod o+r $fx) reload" 
+map +os $lf -remote "send $id $(chmod o+s $fx) reload" 
+map +ax $lf -remote "send $id $(chmod a+x $fx) reload" 
+map +aX $lf -remote "send $id $(chmod a+X $fx) reload" 
+map +aw $lf -remote "send $id $(chmod a+w $fx) reload" 
+map +ar $lf -remote "send $id $(chmod a+r $fx) reload" 
+map +as $lf -remote "send $id $(chmod a+s $fx) reload" 
+
+map -x $lf -remote "send $id $(chmod u-x $fx) reload" 
+map -X $lf -remote "send $id $(chmod u-X $fx) reload" 
+map -w $lf -remote "send $id $(chmod u-w $fx) reload" 
+map -r $lf -remote "send $id $(chmod u-r $fx) reload" 
+map -s $lf -remote "send $id $(chmod u-s $fx) reload" 
+map -gx $lf -remote "send $id $(chmod g-x $fx) reload" 
+map -gX $lf -remote "send $id $(chmod g-X $fx) reload" 
+map -gw $lf -remote "send $id $(chmod g-w $fx) reload" 
+map -gr $lf -remote "send $id $(chmod g-r $fx) reload" 
+map -gs $lf -remote "send $id $(chmod g-s $fx) reload" 
+map -ox $lf -remote "send $id $(chmod o-x $fx) reload" 
+map -oX $lf -remote "send $id $(chmod o-X $fx) reload" 
+map -ow $lf -remote "send $id $(chmod o-w $fx) reload" 
+map -or $lf -remote "send $id $(chmod o-r $fx) reload" 
+map -os $lf -remote "send $id $(chmod o-s $fx) reload" 
+map -ax $lf -remote "send $id $(chmod a-x $fx) reload" 
+map -aX $lf -remote "send $id $(chmod a-X $fx) reload" 
+map -aw $lf -remote "send $id $(chmod a-w $fx) reload" 
+map -ar $lf -remote "send $id $(chmod a-r $fx) reload" 
+map -as $lf -remote "send $id $(chmod a-s $fx) reload" 
+
+
+
+
+map aag create_tgz
+map aax create_txz
+map aab create_bz2
+map aaz create_zip
 map ad push :mkdir<space>
 map af push :touch<space>
 
 
 cmd open ${{
-    case $(file --mime-type "$(readlink -f $f)" -b) in
+    case $(file --mime-type "$(readlink -$ff $f)" -b) in
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 	image/vnd.djvu|application/pdf|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*|application/json|inode/x-empty|application/x-subrip) $EDITOR $fx;;
@@ -93,51 +222,6 @@ map f ${{
 
 map x extract
 
-cmd extract ${{
-    set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
-}}
-
-cmd tar ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    tar czf $1.tar.gz $1
-    rm -rf $1
-}}
-
-cmd zip ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    zip -r $1.zip $1
-    rm -rf $1
-}}
-
-cmd fzf_jump ${{
-    res="$(find . -maxdepth 1 | fzf --reverse --header="Jump to location")"
-    if [ -n "$res" ]; then
-        if [ -d "$res" ]; then
-            cmd="cd"
-        else
-            cmd="select"
-        fi
-        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
-        lf -remote "send $id $cmd \"$res\""
-    fi
-}}
 map zz :fzf_jump
-
-cmd edit-config ${{
-    $EDITOR ~/.config/lf/lfrc
-    lf -remote "send $id source ~/.config/lf/lfrc"
-}}
 
 map C edit-config
