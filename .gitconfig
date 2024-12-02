@@ -1,0 +1,67 @@
+[user]
+  name =
+  email = 
+[core]
+        pager = delta
+	autocrlf = false
+	compression = 0
+#	autocrlf = input
+#	safecrlf = true
+[color]
+        status = auto
+        branch = auto
+        diff = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[apply]
+       # whitespace = skip
+
+[interactive]
+    diffFilter = delta --color-only
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  type = cat-file -t
+  dump = cat-file -p
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+[difftool]
+    prompt = false
+[diff]
+    tool = vimdiff
+[mergetool]
+    keepBackup = false
+[merge]
+    ; tool = vimdiff
+    conflictstyle = zdiff3
+	ff = false
+[http]
+	sslVerify = true
+
+[include]
+    path = /home/georgi/.config/delta/themes.gitconfig
+
+[delta]
+    ; features = arctic-fox
+  ; dark = false
+  ; light = true
+    features = chameleon
+    side-by-side = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
