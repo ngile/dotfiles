@@ -11,6 +11,7 @@ config = {
 	default_cursor_style = "SteadyBlock",
 	cursor_blink_ease_in = "Constant",
 	-- Setting this to 0 disables blinking
+	-- window_padding = { left = 3, right = 3, top = 3, bottom = 3 },
 	cursor_blink_rate = 0,
 	window_padding = {
 		left = 2,

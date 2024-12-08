@@ -7,7 +7,7 @@ configuration {
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 	show-icons: false;
-	terminal: "alacritty";
+	terminal: "wezterm";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{terminal} -e {cmd}";*/
@@ -168,7 +168,8 @@ configuration {
     normal-background:           transparent;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  rgba ( 38, 139, 210, 100 % );
-    border-color:                @foreground;
+    //border-color:                @foreground;
+    border-color:                @background;
     spacing:                     2;
     separatorcolor:              rgba ( 38, 139, 210, 100 % );
     urgent-background:           transparent;
