@@ -1,27 +1,20 @@
 #! /bin/sh
 
-if [[ $(xrandr -q |grep -w connected|wc -l) -eq 2 ]]; 
-then
- xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-3 --mode 1920x1080 --pos 0x0 --rotate normal
-fi
-  
 
-bspc monitor DP-3 -d 1 2 3 4
-bspc monitor eDP-1 -d 1 2 3 4
-
+bspc monitor DP-3 -d 1 2 3 4 5 6
+bspc monitor eDP-1 -d 7
+# bspc wm -0 DP-3 eDP-1
 xsetroot -cursor_name left_ptr
-sxhkd & nitrogen --restore & polybar &
  
-bspc config border_width         2
-bspc config window_gap          12
+bspc config border_width         1
+bspc config window_gap          5
+bspc config top_padding 0
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.60
 bspc config focus_follows_pointer true
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+sxhkd & $HOME/.config/polybar/launch.sh && compton -b && sb-monitor && nitrogen --restore 
