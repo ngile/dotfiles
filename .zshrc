@@ -61,6 +61,7 @@ _fzf_compgen_dir() {
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+export TERMINAL=wezterm
 
 
 _fzf_comprun() {

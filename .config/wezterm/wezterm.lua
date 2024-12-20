@@ -1,7 +1,8 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 config = {
-	font = wezterm.font("Cousine Nerd Font"),
+	-- font = wezterm.font("Iosevka Nerd Font Mono"),
+	font = wezterm.font("SauceCodePro Nerd Font"),
 	font_size = 12,
 	enable_tab_bar = false,
 	window_decorations = "RESIZE",

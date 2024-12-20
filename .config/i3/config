@@ -141,6 +141,7 @@ assign [class="Skype"] $workspace3
 assign [class="Remmina"] $workspace4
 assign [class="mpv"] $workspace6
 for_window [class="Remmina"] floating enable move right 10px, move down 20px
+# for_window [class="wezterm"] floating enable move left 10px, move down 30px
 # for_window [class="ViberPC"] floating enable move right 10px,move down 30px
 # for_window [class="Skype"] floating enable move left 10px, move down 30px
 
@@ -195,7 +196,7 @@ client.urgent #1A1A1A #3B89B5 #a5a5a5 #1A1A1A
 client.background #121212
 
 
-
+for_window [floating] resize set 1200 700
 
 hide_edge_borders smart
 
@@ -213,17 +214,19 @@ hide_edge_borders smart
 #
 
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --bg-scale ~/Wallpapers/25700.jpg
+# exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton -b
 # exec --no-startup-id nitrogen --restore; sleep 1; compton --config /home/georgi/.compton.conf
 exec --no-startup-id nm-applet
-# exec_always --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option caps:escape
+# exec_always --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic -option caps:escape,grp:alt_shift_toggle
+# exec_always --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic
 exec --no-startup-id blueman-applet
 #exec --no-startup-id xautolock -time 1 -locker "~/.config/i3/lock.sh"
 
 bindsym $mod+ctrl+x exec "~/.config/i3/shutdown.sh"
 bindsym $mod+shift+x exec "~/.config/i3/lock.sh"
-bindsym mod1+space exec sb-kbd change
+# bindsym mod1+space exec sb-kbd change
 bindsym Print exec flameshot gui
 bindsym $mod+shift+p exec rofipass
 
@@ -252,16 +255,17 @@ bar {
     # font pango: System San Francisco Display 12
    # font pango: Terminus, awesome 9
     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    i3bar_command i3bar --transparency
     status_command i3blocks
     position top 
         colors {
 
-        background #080808
-        statusline #808080
+        background #29252200
+        statusline #ECE1D7
         separator #808080
-        focused_workspace #080808 #222222 #ffffff
-        active_workspace #080808 #080808 #797979
+        focused_workspace #080808 #292522 #ECE1D7
+        active_workspace #080808 #080808 #797979AA
         inactive_workspace #080808 #080808 #4F4F4F
-        urgent_workspace #080808 #080808 #EA4C59
+        urgent_workspace #080808 #080808 #EA4C59AA
 }
 }
