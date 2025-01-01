@@ -1,0 +1,65 @@
+font-family = Monaspace Neon
+# Melange theme
+background = #292522
+foreground = #ECE1D7
+cursor-color = #ECE1D7
+selection-background = #403A36
+selection-foreground = #ECE1D7
+palette = 0=#34302C
+palette = 1=#BD8183
+palette = 2=#78997A
+palette = 3=#E49B5D
+palette = 4=#7F91B2
+palette = 5=#B380B0
+palette = 6=#7B9695
+palette = 7=#C1A78E
+palette = 8=#867462
+palette = 9=#D47766
+palette = 10=#85B695
+palette = 11=#EBC06D
+palette = 12=#A3A9CE
+palette = 13=#CF9BC2
+palette = 14=#89B3B6
+palette = 15=#ECE1D7
+
+selection-invert-fg-bg = false
+minimum-contrast = 1
+cursor-opacity = 0.9
+#adjust-cell-height = 30%
+cursor-style = bar
+cursor-style-blink = true
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+confirm-close-surface = false
+background-opacity = 0.9
+
+
+window-padding-x = 0
+window-padding-y = 0
+window-decoration = false
+window-padding-balance = true
+copy-on-select = clipboard
+# window-colorspace = "display-p3"
+
+quit-after-last-window-closed = true
+
+quit-after-last-window-closed-delay = 1s
+initial-window = true
+quick-terminal-position = top
+quick-terminal-screen = main
+quick-terminal-animation-duration = 0.4
+quick-terminal-autohide = true
+
+keybind = ctrl+space>r=reload_config
+keybind = ctrl+space>x=close_surface
+
+# split
+keybind = ctrl+space>\=new_split:right
+keybind = ctrl+space>-=new_split:down
+
+keybind = ctrl+space>j=goto_split:bottom
+keybind = ctrl+space>k=goto_split:top
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>l=goto_split:right
+
+keybind = ctrl+space>z=toggle_split_zoom

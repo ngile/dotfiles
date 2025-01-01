@@ -104,7 +104,9 @@ cmd glob-select %IFS=" "; :glob-select -- "$*"
 # Shortcuts
 map gD cd ~/Documents
 map gd cd ~/Downloads
-map gr cd ~/repos/
+map grp cd ~/repos/personal/
+map gra cd ~/repos/adata/
+map grr cd ~/repos
 map gww cd ~/work
 map gm cd /media
 map gC cd ~/.config

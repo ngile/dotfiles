@@ -1,8 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 config = {
-	-- font = wezterm.font("Iosevka Nerd Font Mono"),
-	font = wezterm.font("SauceCodePro Nerd Font"),
+	font = wezterm.font("Monaspace Neon"),
 	font_size = 12,
 	enable_tab_bar = false,
 	window_decorations = "RESIZE",
@@ -11,14 +10,17 @@ config = {
 	max_fps = 120,
 	default_cursor_style = "SteadyBlock",
 	cursor_blink_ease_in = "Constant",
-	-- Setting this to 0 disables blinking
-	-- window_padding = { left = 3, right = 3, top = 3, bottom = 3 },
+	webgpu_preferred_adapter = wezterm.gui.enumerate_gpus()[1],
+	front_end = "WebGpu",
 	cursor_blink_rate = 0,
 	window_padding = {
 		left = 2,
 		right = 2,
 		top = 15,
 		bottom = 0,
+	},
+	keys = {
+		{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 	},
 }
 

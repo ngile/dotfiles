@@ -1,7 +1,8 @@
 //@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
 configuration {
 /*	modi: "window,drun,ssh";*/
-	font: "Cousine Nerd Font 12";
+/*  font: "JetBrainsMono Nerd Font 12"; */
+	font: "Monaspace Xenon 12";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -184,6 +185,13 @@ window {
     background-color: rgba ( 57, 57, 57, 85 % );
     border:           1;
     padding:          5;
+
+    location:       north;
+    y-offset:       calc(50% - 176px);
+    width:          1024;
+    border-radius:  10px;
+
+
 }
 mainbox {
     border:  0;

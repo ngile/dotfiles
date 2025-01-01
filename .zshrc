@@ -30,6 +30,8 @@ alias v=nvim
 alias lf=lfub
 alias ls="eza --icons=always"
 alias cd="z"
+alias kx=kubectx
+alias kn=kubens
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
@@ -37,11 +39,12 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH=$HOME/Programs/bin:$PATH
+export PATH=$HOME/.local/bin/scripts:$HOME/Programs/bin:$PATH
 export EDITOR=nvim
 export TERM=xterm-256color
 
 source <(eksctl completion zsh)
+source <(argocd completion zsh)
 #
 autoload -U +X bashcompinit && bashcompinit
 source <(kubectl completion zsh)
