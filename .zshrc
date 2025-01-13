@@ -26,6 +26,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 alias k=kubectl
+alias h=helm
 alias v=nvim
 alias lf=lfub
 alias ls="eza --icons=always"
@@ -45,6 +46,7 @@ export TERM=xterm-256color
 
 source <(eksctl completion zsh)
 source <(argocd completion zsh)
+source <(helm completion zsh)
 #
 autoload -U +X bashcompinit && bashcompinit
 source <(kubectl completion zsh)

@@ -14,7 +14,7 @@ set ratios 1:2:2
 set sortby time
 set reverse
 set info size
-set dircounts
+#set dircounts
 
 
 # Shell scripts
@@ -225,5 +225,5 @@ map f ${{
 map x extract
 
 map zz :fzf_jump
-
 map C edit-config
+map zS calcdirsize
