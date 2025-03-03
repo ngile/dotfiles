@@ -1,0 +1,109 @@
+# General 
+[manager]
+marker_copied   = { fg = "#89b76f", bg = "#89b76f" }  # Spring Green (green)
+marker_cut      = { fg = "#e46876", bg = "#e46876" }  # Wave Red (red)
+marker_marked   = { fg = "#957fb8", bg = "#957fb8" }  # Oni Violet (magenta)
+marker_selected = { fg = "#ffa066", bg = "#ffa066" }  # Surimi Orange (cyan)
+
+cwd = { fg = "#e6c384" }  # Carp Yellow (yellow)
+hovered = { reversed = true }
+preview_hovered = { reversed = true }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# Default bg
+count_copied   = { fg = "#1f1f28", bg = "#89b76f" }  # Spring Green
+count_cut      = { fg = "#1f1f28", bg = "#e46876" }  # Wave Red
+count_selected = { fg = "#1f1f28", bg = "#e6c384" }  # Carp Yellow
+
+border_symbol = "│"
+border_style = { fg = "#dcd7ba" }  # Fuji White (white)
+
+# Status-line
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "reset", bg = "#2a2a37" }  # Dark background for separator
+
+# Default bg
+mode_normal = { fg = "#1f1f28", bg = "#E49B5D", bold = true }  # Golden Orange
+mode_select = { fg = "#1f1f28", bg = "#957fb8", bold = true }  # Oni Violet (magenta)
+mode_unset  = { fg = "#1f1f28", bg = "#e6c384", bold = true }  # Carp Yellow (yellow)
+
+# Lighter Orange - light bg
+progress_label  = { fg = "#E49B5D", bg = "#2a2a37", bold = true }  # Golden Orange
+# Light bg - default bg
+progress_normal = { fg = "#2a2a37", bg = "#1f1f28" }
+progress_error  = { fg = "#2a2a37", bg = "#1f1f28" }
+
+permissions_t = { fg = "#89b76f" }  # Spring Green (green)
+permissions_r = { fg = "#e6c384" }  # Carp Yellow (yellow)
+permissions_w = { fg = "#e46876" }  # Wave Red (red)
+permissions_x = { fg = "#6a9589" }  # Wave Aqua (cyan)
+permissions_s = { fg = "#957fb8" }  # Oni Violet (magenta)
+
+[select]
+border   = { fg = "#E49B5D" }  # Golden Orange
+active   = { fg = "#957fb8", bold = true }  # Oni Violet (magenta)
+inactive = {}
+
+[input]
+border   = { fg = "#E49B5D" }  # Golden Orange
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[completion]
+border   = { fg = "#E49B5D" }  # Golden Orange
+active   = { reversed = true }
+inactive = {}
+
+[tasks]
+border  = { fg = "#E49B5D" }  # Golden Orange
+title   = {}
+hovered = { fg = "#957fb8" }  # Oni Violet (magenta)
+
+[which]
+cols = 2
+separator = " - "
+separator_style = { fg = "#727169" }  # Fuji Gray (dark grey)
+mask = { bg = "#16161d" }  # Dark background
+rest = { fg = "#727169" }  # Fuji Gray (dark grey)
+cand = { fg = "#E49B5D" }  # Golden Orange
+desc = { fg = "#54546d" }  # Dark gray
+
+[help]
+on      = { fg = "#6a9589" }  # Wave Aqua (cyan)
+run     = { fg = "#957fb8" }  # Oni Violet (magenta)
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#1f1f28", bg = "#dcd7ba" }  # Fuji White (white)
+
+[notify]
+title_info  = { fg = "#89b76f" }  # Spring Green (green)
+title_warn  = { fg = "#e6c384" }  # Carp Yellow (yellow)
+title_error = { fg = "#e46876" }  # Wave Red (red)
+
+[mode]
+normal_main = { fg = "#1f1f28", bg = "#E49B5D" }  # Golden Orange
+normal_alt  = { fg = "#E49B5D", bg = "#2a2a37" }
+select_main = { fg = "#1f1f28", bg = "#957fb8" }  # Oni Violet (magenta)
+select_alt  = { fg = "#957fb8", bg = "#2a2a37" }
+unset_main  = { fg = "#1f1f28", bg = "#e6c384" }  # Carp Yellow (yellow)
+unset_alt   = { fg = "#e6c384", bg = "#2a2a37" }
+
+# Files
+[filetype]
+rules = [
+    { mime = "image/*", fg = "#e6c384" },  # Carp Yellow (yellow)
+    { mime = "{audio,video}/*", fg = "#957fb8" },  # Oni Violet (magenta)
+    { mime = "application/{,g}zip", fg = "#e46876" },  # Wave Red (red)
+    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e46876" },  # Wave Red (red)
+    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#6a9589" },  # Wave Aqua (cyan)
+    { name = "*", is = "orphan", fg = "#e46876" },  # Wave Red (red)
+    { name = "*", is = "exec", fg = "#957fb8" },  # Oni Violet (magenta)
+    { name = "*/", fg = "#E49B5D" }  # Golden Orange
+]
+
