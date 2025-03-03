@@ -36,8 +36,9 @@ local g = {
 	indent,
 	t_Co = 256,
 	mouse = a,
+        snacks_animate = false,
 }
-
+vim. g. snacks_animate = false
 for k, v in pairs(o) do
 	vim.opt[k] = v
 end
@@ -48,7 +49,6 @@ end
 
 --vim.autocmd FileType=yaml setlocal indentkeys-=<:>
 --
-
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "yaml",
 	callback = function()

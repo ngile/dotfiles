@@ -20,6 +20,7 @@ bindkey '^R' history-incremental-search-backward
 
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+export PATH=$HOME/.local/bin:$HOME/.local/bin/scripts:$HOME/Programs/bin:$PATH
 
 
 eval "$(starship init zsh)"
@@ -30,7 +31,7 @@ alias h=helm
 alias v=nvim
 alias lf=lfub
 alias ls="eza --icons=always"
-alias cd="z"
+alias cd=z
 alias kx=kubectx
 alias kn=kubens
 
@@ -40,7 +41,6 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH=$HOME/.local/bin/scripts:$HOME/Programs/bin:$PATH
 export EDITOR=nvim
 export TERM=xterm-256color
 
@@ -118,4 +118,14 @@ zle -N my-backward-delete-whole-word
 bindkey '^[^w' my-backward-delete-whole-word
 function yy() {
    xclip -selection clipboard
+}
+
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
