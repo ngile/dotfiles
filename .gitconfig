@@ -58,10 +58,9 @@ lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
     path = /home/georgi/.config/delta/themes.gitconfig
 
 [delta]
-    ; features = arctic-fox
-  ; dark = false
-  ; light = true
-    features = chameleon
+    dark = true
+    light = false
+    features = melange
     side-by-side = true
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│ "
+    line-numbers = true
+
