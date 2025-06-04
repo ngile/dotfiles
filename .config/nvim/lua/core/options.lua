@@ -22,6 +22,7 @@ local o = {
 	autoindent = true,
 	completeopt = { "menu", "menuone", "noselect" },
 	mouse = a,
+	splitright = true,
 }
 
 local g = {
@@ -36,9 +37,9 @@ local g = {
 	indent,
 	t_Co = 256,
 	mouse = a,
-        snacks_animate = false,
+	snacks_animate = false,
 }
-vim. g. snacks_animate = false
+vim.g.snacks_animate = false
 for k, v in pairs(o) do
 	vim.opt[k] = v
 end
@@ -49,10 +50,14 @@ end
 
 --vim.autocmd FileType=yaml setlocal indentkeys-=<:>
 --
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.gitlab-ci.{yml,yaml}",
+	callback = function() vim.bo.filetype = "yaml.gitlab" end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "yaml",
-	callback = function()
-		vim.opt_local.indentkeys = "!^F,o,O,0#,0},0],0-"
-	end
+	callback = function() vim.opt_local.indentkeys = "!^F,o,O,0#,0},0],0-" end,
 })
+
 -- vim.cmd [[colorscheme melange]]

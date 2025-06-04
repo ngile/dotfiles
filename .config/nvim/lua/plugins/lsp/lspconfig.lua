@@ -168,6 +168,11 @@ return {
                               ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
                               ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
                             },
+                            indentation = 2,
+                            format = {
+                              singleQuote = true,
+                              bracketSpacing = true,
+                            },
                           },
                         },
                 })

@@ -34,6 +34,7 @@ alias ls="eza --icons=always"
 alias cd=z
 alias kx=kubectx
 alias kn=kubens
+alias kdebug="kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
@@ -56,17 +57,17 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else batcat -n --color=always --line-range :500 {}; fi"
 
 _fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
+  fdfind --hidden --exclude .git . "$1"
 }
 
-# Use fd to generate the list for directory completion
+# Use fdfind to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
+  fdfind --type=d --hidden --exclude .git . "$1"
 }
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
-export TERMINAL=wezterm
+export TERMINAL=ghostty
 
 
 _fzf_comprun() {
@@ -129,3 +130,7 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+complete -o nospace -C /usr/bin/vault vault
+# source $HOME/Programs/fzf-tab/fzf-tab.plugin.zsh
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
