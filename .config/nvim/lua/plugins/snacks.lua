@@ -16,6 +16,14 @@ return {
 			indent = { enabled = false },
 			input = { enabled = true },
 			notifier = { enabled = true, timeout = 3000 },
+			toggle = {
+				enabled = true,
+				which_key = {
+					enabled = true,
+					icons = true, -- Show icons for active/inactive toggles
+					colors = true, -- Apply colors based on toggle state
+				},
+			},
 			picker = {
 				enabled = true,
 				formatters = {
@@ -154,6 +162,8 @@ return {
 			{ "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
 			-- Other
 			{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+			{ "<leader>ba", function() Snacks.bufdelete.all() end, desc = "Buffer delete all", mode = "n" },
+			{ "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Buffer delete other", mode = "n" },
 			{ "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
 			{ "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
 			{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
@@ -172,7 +182,6 @@ return {
 					Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
 					Snacks.toggle.diagnostics():map("<leader>ud")
 					Snacks.toggle.indent():map("<leader>ug")
-					Snacks.toggle.dim():map("<leader>uD")
 				end,
 			})
 		end,
