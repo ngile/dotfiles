@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+get_launcher() {
+    [ -n "$DISPLAY" ] && echo "rofi -dmenu " || echo "fzf --prompt"
+}
+
+get_browser() {
+    [ -z "$DISPLAY" ] && echo "w3m" || echo "qutebrowser"
+}
+
+main() {
+    local LAUNCHER
+    LAUNCHER=$(get_launcher)
+
+    local BROWSER
+    BROWSER=$(get_browser)
+
+    BOOKMARKS_FILE="$HOME/.config/qutebrowser/bookmarks/urls"
+    QUICKMARKS_FILE="$HOME/.config/qutebrowser/quickmarks"
+
+    local choices
+    if [ -f "$BOOKMARKS_FILE" ]; then
+        choices=$(printf "%s\n%s" "$choices" "$(cat "$BOOKMARKS_FILE")")
+    fi
+
+    if [ -f "$QUICKMARKS_FILE" ]; then
+        choices=$(printf "%s\n%s" "$choices" "$(cat "$QUICKMARKS_FILE"|awk '{print $2,$1}')")
+    fi
+
+    local prompt_arg="-p Search"
+    if [ "$LAUNCHER" = "fzf --prompt" ]; then
+        prompt_arg="-q"
+    fi
+
+    choice=$(echo "$choices" | $LAUNCHER $prompt_arg) || exit 1
+
+    if [[ "$choice" =~ ^http ]]; then
+        $BROWSER "$(echo "$choice" | awk '{print $1}')"
+    else
+        $BROWSER "https://google.com/?q=$choice"
+    fi
+}
+
+main "$@"
