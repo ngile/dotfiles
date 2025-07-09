@@ -1,0 +1,70 @@
+# ~/.config/k9s/skins/in_the_navy_skin.yaml
+# Melange-themed K9s skin with green → #ECE1D7 and blue → #E49B5D
+
+k9s:
+  # General K9s styles
+  body:
+    fgColor: "#d8c3a5"
+    bgColor: "#1c1b19"
+    logoColor: "#d38b63"
+
+  # ClusterInfoView styles
+  info:
+    # fgColor: "#ECE1D7" # Text color (e.g., labels like 'Context', 'CPU', etc.)
+    # sectionColor: "#E49B5D" # Value color (e.g., 'dev', '3%', 'know-retrieval', etc.)
+    fgColor: "#E49B5D" # Text color (e.g., labels like 'Context', 'CPU', etc.)
+    sectionColor: "#ECE1D7" # Value color (e.g., 'dev', '3%', 'know-retrieval', etc.)
+
+  # Frame styles
+  frame:
+    border:
+      fgColor: "#ECE1D7" # replaced blue
+      focusColor: "#d38b63"
+
+    menu:
+      # fgColor: "#ECE1D7"
+      fgColor: "#ECE1D7"
+      # keyColor: "#a96e34"
+      keyColor: "#E49B5D"
+      numKeyColor: "#E49B5D"
+
+    crumbs:
+      # fgColor: "#d8c3a5"
+      fgColor: "#ECE1D7"
+      bgColor: "#2a2723"
+      activeColor: "#d38b63"
+
+    status:
+      newColor: "#ECE1D7" # replaced green
+      modifyColor: "#E49B5D" # replaced blue
+      addColor: "#E49B5D" # replaced blue
+      errorColor: "#8a3f5f"
+      highlightColor: "#d38b63"
+      killColor: "#605a52"
+      completedColor: "#867462"
+
+    title:
+      fgColor: "#d8c3a5"
+      bgColor: "#1c1b19"
+      highlightColor: "#d38b63"
+      counterColor: "#a96e34"
+      filterColor: "#605a52"
+
+  views:
+    table:
+      fgColor: "#d8c3a5"
+      bgColor: "#1c1b19"
+      cursorColor: "#d38b63"
+      header:
+        fgColor: "#d38b63"
+        bgColor: "#2a2723"
+        sorterColor: "#a96e34"
+
+    yaml:
+      keyColor: "#d38b63"
+      colonColor: "#605a52"
+      valueColor: "#E49B5D" # replaced blue
+
+    logs:
+      fgColor: "#d8c3a5"
+      bgColor: "#1c1b19"
