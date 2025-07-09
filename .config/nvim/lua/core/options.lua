@@ -60,4 +60,29 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function() vim.opt_local.indentkeys = "!^F,o,O,0#,0},0],0-" end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = {
+		"playbook.yml",
+		"playbooks/*.yml",
+		"roles/**/tasks/*.yml",
+		"roles/**/handlers/*.yml",
+		"roles/**/defaults/*.yml",
+		"roles/**/vars/*.yml",
+		"roles/**/meta/*.yml",
+		"**/group_vars/*.yml",
+		"**/host_vars/*.yml",
+	},
+	callback = function() vim.bo.filetype = "yaml.ansible" end,
+})
+
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+-- 	pattern = ".gitlab-ci.yml",
+-- 	callback = function() vim.bo.filetype = "gitlab-ci" end,
+-- })
+
+vim.filetype.add({
+	pattern = {
+		["%.gitlab%-ci%.ya?ml"] = "yaml.gitlab",
+	},
+})
 -- vim.cmd [[colorscheme melange]]

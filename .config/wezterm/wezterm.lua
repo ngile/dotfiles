@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 config = {
-	font = wezterm.font("Monaspace Neon"),
+	font = wezterm.font("Iosevka SS16"),
 	font_size = 11,
 	enable_tab_bar = false,
 	window_decorations = "RESIZE",

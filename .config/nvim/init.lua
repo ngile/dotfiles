@@ -1,6 +1,7 @@
 require("core.options")
 require("core.keybindings")
 require("core.lazy")
+require("core.lsp")
 
 if vim.g.neovide then
 	vim.g.neovide_cursor_animation_length = 0
